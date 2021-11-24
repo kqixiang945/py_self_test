@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: UTF-8 -*-蒋大帅 孔肖寒
+# -*- coding: UTF-8 -*-
 
 import datetime
 import re
@@ -583,20 +583,28 @@ def split_element():
     array = aaa.split(',', 1)
     print(array)
 
+
+# ***该类的入口main方法
 if __name__ == "__main__":
 
     # **替换指定的字符串
-    ttt = replace_char('_','\t')
+    ttt = replace_char('_', '\t')
     # ttt = replace_char('dx_[a-z]*','00000000',1)
     print(ttt)
 
-
+    # **删除剪切板中的含有指定字符串的行.
     delete_specify_char_line('_USR,_PWD')
 
+    # **打印当前python的版本
     print(sys.version)
 
-    # send_text_to_clipboard()
+    # **把指定的字符串给到MacOS的剪切板
+    send_text_to_clipboard("测试测试测试")
+
+    # **把指定的图片给到MacOS的剪切板
     read_picture_to_clipboard('/Users/kongxiaohan/Desktop/Xnip2021-11-04_23-36-09.jpg')
+
+    # **生成ETL的生产跑数命令
     print(gen_etl_task_cmd())
 
     # **获取量个字符串之间的区别
